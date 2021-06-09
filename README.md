@@ -1,2 +1,2 @@
-# nm-otool
-recode the nm and the otool command
+# ft_nm
+ ELF nm: list symbols from object files
