@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 22:32:16 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/09 22:34:40 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:48:15 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	main(int ac, char **av)
 	else
 		obj = av[1];
 	printf("obj: %s\n", obj);
-	return (0);
+	return (EXIT_SUCCESS);
 }

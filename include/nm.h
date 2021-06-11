@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 22:34:44 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/09 22:34:59 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:48:52 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define NM_H
 
 # include <stdio.h>
+# include <stdlib.h>
 
 #endif

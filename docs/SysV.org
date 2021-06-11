@@ -1,0 +1,72 @@
+#+TITLE: VM
+#+AUTHOR: ciglesia
+
+* TODOS
+** TODO [#A] find out [0%]
+- [ ] Describe segments of the execution view for the file format section.
+* REFERENCE
+** Object file format (ELF, Executable and Linking Format)
+|---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *relocatable file*  | holds code and data suitable for *linking* with other object files to create an *executable* or a *shared object* file                                 |
+| - *executable file* | holds a program suitable for *execution* (specifies how exec(BA_OS) creates a program's *process image*)                                               |
+| - *shared object*   | holds code and data suitable for *linking* in two contexts:                                                                                            |
+|                     | -          link editor (ld(BA_OS)) processes the *shared object* file with other *relocatable and shared object files* to create another *object file* |
+|                     | -          the dynamic linker combines it with an *executable file* and other *shared objects* to create a *process image*                             |
+|---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------|
+Created by the assembler and link editor, *object files are binary representations of programs* intended to be executed directly on a processor.
+    (Programs that require other abstract machines, such as shell scripts, are excluded)
+*** File format
+Object files participate in program *linking* (*building* a program) and program *execution* (*running* a program).
+
+- *ELF HEADER*
+  - *road map* describing the file's organization
+- *Sections*
+  - hold the bulk of object file information for the *linking view*:
+	* Instructions
+	* Data
+	* *symbol table* _____________________________________________________________
+	* relocation information
+	* ...
+- *Segments*
+  - TODO
+- *Header table*
+  - tells the system how to create a process image and *describe the file's sections*
+	* Files used to build a process image (execute a program) *must have a program header table*
+	* Relocatable files do not need one
+	* Every section has an entry in the table
+	* each entry gives information such as the section name, the section size, and so on
+	* Files used during linking must have a section header table; other object files may or may not have one
+
+**Although the figure shows the program header table immediately after the ELF header, and the section header table following the sections, actual files may differ. Moreover, sections and segments have no specified order. Only the ELF header has a fixed position in the file.**
+
+**** Linking view
+|-----------------------------------|
+| *ELF HEADER*                      |
+|-----------------------------------|
+| Program header table (*optional*) |
+|-----------------------------------|
+| *section 1*                       |
+| ...                               |
+| *section n*                       |
+| ...                               |
+|-----------------------------------|
+| Section header table (*required*) |
+|-----------------------------------|
+
+**** Execution view
+|-----------------------------------|
+| *ELF HEADER*                      |
+|-----------------------------------|
+| Program header table (*required*) |
+|-----------------------------------|
+| *segment 1*                       |
+| *segment 2*                       |
+| *section 3*                       |
+| ...                               |
+|-----------------------------------|
+| Section header table (*optional*) |
+|-----------------------------------|
+
+** Useful cmds
+- xxd -l 64 <obj>
+- hexdump -Cv <obj>
