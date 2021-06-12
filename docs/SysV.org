@@ -67,6 +67,9 @@ Object files participate in program *linking* (*building* a program) and program
 | Section header table (*optional*) |
 |-----------------------------------|
 
+** ELF Header
+
+
 ** Useful cmds
 - xxd -l 64 <obj>
 - hexdump -Cv <obj>
