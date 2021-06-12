@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 17:00:07 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/09 23:00:32 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/12 21:06:57 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,11 +18,11 @@ INC			=	./include/
 
 # Libft
 SUB_MAKE	=	./libft/
-INCFT		=	./libft/
+INCFT		=	./libft/include/
 
 INCLUDE		=	-O3 -I $(INCFT) -I $(INC)
 
-INC_LIB		=	-L$(INCFT) -lft -lcurses
+INC_LIB		=	-L$(SUB_MAKE) -lft
 
 FONTS		=	powerline
 
