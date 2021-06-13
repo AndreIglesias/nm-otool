@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 17:00:07 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/13 23:16:20 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/14 01:51:58 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,8 +17,8 @@ NAME		=	ft_nm
 INC			=	./include/
 
 # Libft
-SUB_MAKE	=	./libft/
-INCFT		=	./libft/include/
+SUB_MAKE	=	./lib/libft/
+INCFT		=	./lib/libft/include/
 
 INCLUDE		=	-O3 -I $(INCFT) -I $(INC)
 
