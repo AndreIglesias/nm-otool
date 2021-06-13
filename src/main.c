@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 22:32:16 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/14 00:21:38 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/14 01:04:39 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ static void	ft_nm(char *obj, int nparams, int h)
 	else if (err < 0)
 		return ;
 	elf->class = elf->identifier[EI_CLASS];
+	if (nparams)
+		ft_printf("%s:\n", obj);
 	if (elf_header(elf) && h)
 		print_header(elf);
 	free(elf);
@@ -104,7 +106,7 @@ int	main(int ac, char **av)
 	while (i < ac)
 		h += (ft_strcmp(av[i++], "-h") == 0);
 	obj = (ac == 1) ? "a.out" : av[1];
-	ft_nm(obj, h > 0);
+	ft_nm(obj, ac - 1, h > 0);
 	i = 2;
 	while (i < ac)
 	{
