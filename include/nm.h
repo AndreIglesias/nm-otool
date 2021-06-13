@@ -6,7 +6,7 @@
 /*   By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 22:34:44 by ciglesia          #+#    #+#             */
-/*   Updated: 2021/06/13 01:28:42 by ciglesia         ###   ########.fr       */
+/*   Updated: 2021/06/13 23:14:51 by ciglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ typedef struct s_elf
 	int				fd;
 }	t_elf;
 
+/*
+**	Display
+*/
+
+void		print_header(t_elf *elf);
 
 #endif

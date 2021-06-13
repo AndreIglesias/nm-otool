@@ -6,7 +6,7 @@
 #    By: ciglesia <ciglesia@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 17:00:07 by ciglesia          #+#    #+#              #
-#    Updated: 2021/06/12 21:06:57 by ciglesia         ###   ########.fr        #
+#    Updated: 2021/06/13 23:16:20 by ciglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,17 +24,15 @@ INCLUDE		=	-O3 -I $(INCFT) -I $(INC)
 
 INC_LIB		=	-L$(SUB_MAKE) -lft
 
-FONTS		=	powerline
-
 #***************** SRC* *******************#
 
 DIRSRC		=	./src/
-DIRSIG		=	$(DIRSRC)/signal_handler/
+DIRDIS		=	$(DIRSRC)/display/
 
 SRC			=	main.c
-SIGNAL		=
+DISPLAY		=	print_header.c
 
-SRCS		=	$(SRC) $(SIGNAL)
+SRCS		=	$(SRC) $(DISPLAY)
 
 #***************** DEPS ******************#
 
@@ -72,7 +70,7 @@ E0M			=	 "\e[0m"
 				@printf $(GREEN)"Generating minishell objects... %-33.33s\r" $@
 				@$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
 
-%.o		:		../$(DIRSIG)/%.c
+%.o		:		../$(DIRDIS)/%.c
 				@printf $(GREEN)"Generating minishell objects... %-33.33s\r" $@
 				@$(CC) $(CFLAGS) $(INCLUDE) -MMD -o $@ -c $<
 
